@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"c:/Program Files \\(x86\\)/EasyPHP-5.3.6.0/mysql/bin/mysqld.exe\" --version)",
+      "Bash(\"c:/Program Files \\(x86\\)/EasyPHP-5.3.6.0/php/php.exe\" -l \"c:/Program Files \\(x86\\)/EasyPHP-5.3.6.0/www/projet_web/fonctionnalite_2/php/get_points.php\")"
+    ]
+  }
+}
