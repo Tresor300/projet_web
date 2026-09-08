@@ -1,0 +1,6 @@
+.git
+Dockerfile
+.dockerignore
+**/__pycache__
+*.pyc
+INSTALLATION_LOCALE.md
