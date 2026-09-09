@@ -38,11 +38,11 @@ define('EST_WINDOWS', DIRECTORY_SEPARATOR === '\\');
    peut être résolu en IPv6 (::1) alors que MySQL n'écoute qu'en IPv4, ce qui
    provoque une longue attente suivie d'une erreur de connexion.
 */
-define('DB_HOST', '127.0.0.1');
+define('DB_HOST', 'db');
 define('DB_PORT', 3306);
 define('DB_NAME', 'tv_fowet');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'root');
 define('DB_CHARSET', 'utf8mb4');
 
 

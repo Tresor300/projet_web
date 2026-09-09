@@ -17,4 +17,20 @@ pour l'instant l'image à été crée mais malheurement ell n'a pas accès a la 
 **Encore flou.** Mon image contient 191 paquets logiciels alors que
 je n'en ai choisi qu'un. Je ne sais pas encore lesquels sont
 vulnérables ni comment le savoir automatiquement.
-volume : c'est le mécanisme qui relie un dossier de ta machine à un dossier dans un conteneur. Tu le reverras souvent.
+##volume : c'est le mécanisme qui relie un dossier de ta machine à un dossier dans un conteneur. Tu le reverras souvent.
+
+## Étape 2 — Base de données conteneurisée
+
+**Problème résolu.** L'application dépendait d'un MySQL installé
+sur ma machine. Elle embarque maintenant sa propre base : le projet
+entier démarre avec `docker compose up`, sans rien installer.
+
+**Ce qui casserait sans.** Le conteneur web chercherait sa base à
+127.0.0.1, c'est-à-dire chez lui, où rien n'écoute.
+
+**Ce que j'ai appris en cassant.** Windows ignore la casse, Linux
+non — ni pour les fichiers, ni pour les tables. Une application qui
+tourne sous XAMPP peut casser dans un conteneur pour cette seule
+raison.
+
+**Encore flou.** À compléter.

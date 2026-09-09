@@ -8,6 +8,7 @@ services:
 
   db:
     image: mariadb:10.11
+    command: --lower-case-table-names=1
     environment:
       MARIADB_ROOT_PASSWORD: root
       MARIADB_DATABASE: tv_fowet
