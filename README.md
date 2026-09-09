@@ -1,20 +1,24 @@
 Chaîne DevSecOps — Triage automatisé des vulnérabilités
+
 Une chaîne d'intégration continue qui analyse une application à chaque commit, trie les vulnérabilités trouvées pour ne garder que celles qui comptent réellement, propose les correctifs, et empêche le déploiement de ce qui n'est pas conforme.
 
 Projet en cours de construction. L'avancement réel est indiqué plus bas. Les étapes non cochées ne sont pas encore implémentées.
 
 Le problème
+
 Les outils d'analyse de sécurité remontent plusieurs centaines de vulnérabilités par application. Une équipe ne peut pas les traiter toutes, alors elle finit par les ignorer en bloc — et de vraies failles exploitables partent en production, noyées dans le bruit.
 
 Le problème n'est pas de détecter : les scanners font déjà très bien ce travail. Le problème est de savoir lesquelles comptent vraiment, et d'empêcher les autres de passer.
 
 Le résultat visé
+
 Faire en sorte qu'une équipe traite les quelques failles réellement exploitables au lieu d'en ignorer plusieurs centaines.
 
 Mesure	Valeur
 Vulnérabilités brutes remontées par les scanners	à mesurer (étape 4)
 Vulnérabilités réellement actionnables après triage	à mesurer (étape 5)
 Réduction du bruit	à calculer
+
 Ces chiffres seront mesurés sur l'application cible, pas estimés.
 
 Comment ça marche
@@ -25,9 +29,11 @@ Enrichissement — un modèle de langage explique les failles retenues et rédig
 Blocage — le cluster Kubernetes refuse toute image non signée ou porteuse d'une faille critique.
 Suivi — un tableau de bord expose la couverture, le délai moyen de remédiation et le taux de conformité.
 Le rôle du modèle de langage
+
 Le tri est fait par des règles déterministes et vérifiables, jamais par le modèle. Celui-ci n'intervient qu'après la sélection, pour expliquer une faille en langage clair et proposer un correctif. Une décision de sécurité doit être reproductible et auditable ; une génération de texte ne l'est pas.
 
 Application cible
+
 La partie web du projet IRVE (PHP / MySQL), une application existante réutilisée ici comme cobaye. Son code n'est pas modifié : l'objet de ce dépôt est la chaîne, pas l'application.
 
 Avancement
@@ -41,12 +47,16 @@ Avancement
  8. Contrôle d'admission — politiques Kyverno, signature d'images Cosign
  9. Observabilité — tableau de bord des indicateurs de sécurité
 Stack
+
 Docker · GitHub Actions · Trivy · Syft · Semgrep · Checkov · Kubernetes (k3d) · Kyverno · Cosign · Prometheus · Grafana
 
 Démarrage
+bash
 # à compléter à la fin de l'étape 2
 Journal de construction
+
 Chaque étape est documentée dans journal.md : le problème résolu, ce qui casserait sans elle, et les points encore ouverts.
 
 Auteur
+
 Trésor Virenque Fowe Takam — élève ingénieur ISEN Nantes, orientation DevOps / Cloud LinkedIn · GitHub
