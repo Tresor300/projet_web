@@ -10,3 +10,9 @@ jobs:
 
       - name: Construire l'image
         run: docker build -t irve-web .
+
+      - name: Scanner l'image
+        run: |
+          docker run --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            aquasec/trivy image --severity CRITICAL irve-web
