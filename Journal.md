@@ -72,3 +72,17 @@ en réalité que 5 failles distinctes comptées plusieurs fois.
 critique passerait inaperçue dans les logs.
 
 **Encore flou.** À compléter.
+
+**Règle 2 : faire échouer le build.**
+Le scan ne se contente plus d'afficher : il arrête la chaîne quand
+il trouve des vulnérabilités corrigeables. Un rapport dont la
+lecture est facultative n'est pas lu — c'est vérifiable sur mon
+propre projet. En faisant échouer le build, le traitement des
+failles devient obligatoire.
+
+**Règle 3 : l'atteignabilité.**
+Sur 42 lignes, il n'y a que 2 failles réelles : une dans OpenSSL et
+une quarantaine dans linux-libc-dev. Or linux-libc-dev ne contient
+que des en-têtes de compilation — un conteneur n'a pas de noyau, il
+emprunte celui de l'hôte. Ces failles ne sont donc pas atteignables.
+Bilan : 1911 alertes brutes, 1 seule méritant attention.
