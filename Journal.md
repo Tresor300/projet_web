@@ -86,3 +86,16 @@ une quarantaine dans linux-libc-dev. Or linux-libc-dev ne contient
 que des en-têtes de compilation — un conteneur n'a pas de noyau, il
 emprunte celui de l'hôte. Ces failles ne sont donc pas atteignables.
 Bilan : 1911 alertes brutes, 1 seule méritant attention.
+
+**Mesure B : 1 faille réelle.**
+1911 alertes brutes → 42 corrigeables → 3 lignes après retrait de
+linux-libc-dev → 1 seule faille distincte (CVE-2026-14456, OpenSSL).
+Réduction de 99,9 %, sans exception ni mise en sourdine : le bruit
+venait d'un paquet de compilation qui n'avait pas à rester dans
+l'image d'exécution.
+
+**Résultat de l'étape 5.**
+1911 → 42 → 3 → 0. Aucune exception, aucune mise en sourdine :
+retrait d'un paquet de compilation resté dans l'image d'exécution,
+puis mise à jour des paquets système. La chaîne bloque désormais
+tout retour en arrière.
