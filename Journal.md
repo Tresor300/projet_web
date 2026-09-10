@@ -34,3 +34,41 @@ tourne sous XAMPP peut casser dans un conteneur pour cette seule
 raison.
 
 **Encore flou.** À compléter.
+
+## Étape 3 — Intégration continue
+
+**Problème résolu.** L'image ne se construisait que sur ma machine.
+Elle est maintenant reconstruite à chaque commit sur une machine
+neuve chez GitHub, ce qui prouve qu'elle est reproductible ailleurs
+que chez moi.
+
+**Ce que j'ai compris.** `runs-on: ubuntu-latest` désigne la machine
+qui exécute le build, pas le système à l'intérieur de l'image. Mon
+image reste sur Debian quel que soit l'hôte : c'est justement ce que
+garantit la conteneurisation.
+
+**Encore flou.** À compléter
+
+## Étape 4 — Mesure du volume brut
+
+**Mesure A : 1911 vulnérabilités** détectées par Trivy dans l'image,
+réparties sur 191 paquets dont un seul (PHP) a été choisi
+explicitement.
+
+**Ce que j'ai observé.** 1911 alertes brutes, dont 14 critiques,
+qui ne sont en fait que 5 failles distinctes comptées plusieurs
+fois. Aucune n'a de correctif disponible, et aucune n'est
+atteignable depuis mon application.
+
+## Étape 4 — Analyse automatisée
+
+**Problème résolu.** L'image est scannée à chaque commit, plus
+seulement quand j'y pense.
+
+**Mesure A : 1911 vulnérabilités**, dont 14 critiques, qui ne sont
+en réalité que 5 failles distinctes comptées plusieurs fois.
+
+**Limite atteinte.** Le scan affiche mais ne bloque rien. Une faille
+critique passerait inaperçue dans les logs.
+
+**Encore flou.** À compléter.
