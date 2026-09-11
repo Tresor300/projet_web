@@ -16,9 +16,11 @@ Faire en sorte qu'une équipe traite les quelques failles réellement exploitabl
 
 | Mesure | Valeur |
 | --- | --- |
-| Vulnérabilités brutes remontées par les scanners | _à mesurer (étape 4)_ |
-| Vulnérabilités réellement actionnables après triage | _à mesurer (étape 5)_ |
-| Réduction du bruit | _à calculer_ |
+| Vulnérabilités connues dans l'image | 1911 |
+| Disposant d'un correctif publié | 42 |
+| Après retrait des paquets non exécutés | 3 |
+| Après mise à jour des paquets système | **0** |
+| Réduction du bruit | **97,8 %** |
 
 Ces chiffres seront mesurés sur l'application cible, pas estimés.
 
