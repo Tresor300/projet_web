@@ -4,3 +4,4 @@ Dockerfile
 **/__pycache__
 *.pyc
 INSTALLATION_LOCALE.md
+Journal.md
