@@ -99,3 +99,19 @@ l'image d'exécution.
 retrait d'un paquet de compilation resté dans l'image d'exécution,
 puis mise à jour des paquets système. La chaîne bloque désormais
 tout retour en arrière.
+
+Aucune exception ni mise en sourdine : le bruit a été supprimé en
+retirant de l'image un paquet de compilation qui n'avait pas à s'y
+trouver, puis en mettant à jour les paquets restants. La chaîne
+échoue si une vulnérabilité corrigeable réapparaît.
+
+## Étape 6 — Correctifs automatiques
+
+**Problème résolu.** Les mises à jour ne dépendent plus de ma
+vigilance : un robot surveille en continu et ouvre une proposition
+de correctif déjà construite et scannée par ma chaîne.
+
+**Limite.** La chaîne vérifie que l'image se construit et qu'elle
+est saine, pas que l'application fonctionne encore. Passer de PHP
+8.2 à 8.5 peut casser du code ancien. La décision de fusionner
+reste humaine tant qu'il n'existe pas de tests applicatifs.
