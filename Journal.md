@@ -115,3 +115,15 @@ de correctif déjà construite et scannée par ma chaîne.
 est saine, pas que l'application fonctionne encore. Passer de PHP
 8.2 à 8.5 peut casser du code ancien. La décision de fusionner
 reste humaine tant qu'il n'existe pas de tests applicatifs.
+
+**Test de la mise à jour PHP 8.2 → 8.5.**
+Aucune régression. J'ai d'abord cru à une casse : je testais pendant
+les 291 s de reconstruction de l'image, l'ancien conteneur étant
+arrêté et le nouveau pas encore prêt.
+
+La seule erreur restante (500 sur predict_cluster.php) est
+antérieure à la mise à jour : ce script appelle Python, absent de
+mon image depuis le début.
+
+**Réflexe retenu.** Vérifier dans les logs avant de conclure. Une
+page cassée n'est pas forcément cassée par le dernier changement.

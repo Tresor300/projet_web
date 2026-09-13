@@ -1,3 +1,4 @@
+name: irve
 services:
   web:
     build: .
