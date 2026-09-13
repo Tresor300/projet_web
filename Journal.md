@@ -127,3 +127,9 @@ mon image depuis le début.
 
 **Réflexe retenu.** Vérifier dans les logs avant de conclure. Une
 page cassée n'est pas forcément cassée par le dernier changement.
+
+Les fonctionnalités 4 et 5 (prédiction IA) renvoient une erreur 500
+dans le conteneur : elles appellent des scripts Python absents de
+l'image. C'est un choix assumé — l'image ne contient que ce qui est
+nécessaire au périmètre analysé. Les fonctionnalités 1 à 3
+suffisent à valider la chaîne.
